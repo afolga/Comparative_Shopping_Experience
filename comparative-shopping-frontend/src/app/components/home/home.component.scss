@@ -1,0 +1,94 @@
+.banner {
+    min-height: 500px;
+    background-color: #FFF9EA;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    align-items: center;
+    justify-content: center;
+    .banner-title {
+        position: relative;
+        z-index: 1;
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 48px;
+        line-height: 72px;
+        color: #808080;
+        width: fit-content;
+        .orange {
+            color: #FFAC4B;
+        }
+        ::before {
+            content: "";
+            position: absolute;
+            width: 97px;
+            height: 97px;
+            border-radius: 50%;
+            z-index: -1;
+            background-color: #FFAC4B;
+            left: -51px;
+            top: -25px;
+        }
+    }
+    input {
+        width: fit-content;
+    }
+    .custom-search {
+        background-color: #FFAC4B;
+        border: 4px solid #FFAC4B;
+        border-radius: 104px;
+        max-width: 100%;
+        width: 620px;
+        min-height: 80px;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        padding: 0 40px;
+        justify-content: flex-start;
+        mat-icon {
+            font-size: 37px;
+            width: 37px;
+            height: 37px;
+            color: white;
+        }
+        
+        input{
+            background-color: #FFAC4B;
+            border: none;
+            outline: none;
+            min-height: fit-content;
+            font-weight: 700;
+            font-size: 36px;
+            color: white;
+            width: 100%;
+            &:focus, &:focus-visible {
+                border: none;
+                outline: none;
+            }
+            &::placeholder {
+                font-weight: 700;
+                font-size: 36px;
+                color: white;
+            }
+        }
+        
+
+    }
+
+    &.search-active {
+        flex-direction: row;
+        gap: 20px;
+    }
+}
+
+.products-container {
+    display: grid;
+    justify-content: center;
+    gap: 48px;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 270px));
+    width: 100%;
+    padding: 30px;
+    max-width: 1000px;
+    margin: auto;
+}

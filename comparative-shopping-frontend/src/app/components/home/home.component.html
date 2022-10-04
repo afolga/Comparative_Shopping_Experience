@@ -1,0 +1,11 @@
+<section class="banner" [ngClass]="{'search-active': currentSearch.length > 0}">
+    <h1 *ngIf="!currentSearch" class="banner-title">Find your best <span class="orange">Fit</span></h1>
+    <h1 *ngIf="currentSearch" class="banner-title">Results for </h1>
+    <div class="custom-search">
+        <mat-icon>search</mat-icon>
+        <input [(ngModel)]="currentSearch" (ngModelChange)="searchProducts()" placeholder="Search">
+    </div>
+</section>
+<section class="products-container">
+    <product-card [product]="p" *ngFor="let p of allProducts"></product-card>
+</section>

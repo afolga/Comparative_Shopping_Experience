@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "cs522-prototype": {
+      "hosting": {
+        "comparative-shopping-frontend": [
+          "cs522-prototype"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "cs522-prototype"
+  }
+}
