@@ -24,6 +24,9 @@ import { provideMessaging,getMessaging } from '@angular/fire/messaging';
 import { providePerformance,getPerformance } from '@angular/fire/performance';
 import { provideRemoteConfig,getRemoteConfig } from '@angular/fire/remote-config';
 import { provideStorage,getStorage } from '@angular/fire/storage';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -37,11 +40,16 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MatDialogModule,
+    MatChipsModule,
+    MatMenuModule,
     BrowserAnimationsModule,
     MatIconModule,
     MatInputModule,
     FormsModule,
     HttpClientModule,
+    MatMenuModule,
+    
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAnalytics(() => getAnalytics()),
     provideAuth(() => getAuth()),
