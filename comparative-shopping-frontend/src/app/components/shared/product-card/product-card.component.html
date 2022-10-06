@@ -1,13 +1,13 @@
-<div class="product-container">
+<div class="product-container" [ngClass]="{'special': isSpecial}">
     <div class="img-container" routerLink="/product">
         <img [src]="product.imageUrl"/>
     </div>
     <div class="product-details">
         <h2 class="product-name" style="cursor: pointer;" routerLink="/product">{{product.name}}</h2>
         <h3 class="product-description" style="cursor: pointer;" routerLink="/product">{{product.description}}</h3>
-        <div class="flex-row flex-center">
-            <p>{{product.lowestPrice}}</p>
-            <span class="">
+        <div class="price-container">
+            <p class="product-price">$ {{product.lowestPrice}}</p>
+            <span class="actions-container">
                 <mat-icon>favorite_outline</mat-icon>
                 <mat-icon>shopping_cart_outline</mat-icon>
             </span>

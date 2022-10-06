@@ -6,6 +6,8 @@
         <input [(ngModel)]="currentSearch" (ngModelChange)="searchProducts()" placeholder="Search">
     </div>
 </section>
+<h1 *ngIf="currentSearch" class="result-title">Products < 1 mile away</h1>
+
 <section class="products-container">
-    <product-card [product]="p" *ngFor="let p of allProducts"></product-card>
+    <product-card [product]="p" [isSpecial]="i <= 2" *ngFor="let p of allProducts; let i = index"></product-card>
 </section>

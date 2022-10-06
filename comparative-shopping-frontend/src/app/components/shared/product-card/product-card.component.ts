@@ -8,7 +8,7 @@ import { Product } from 'src/shoewizard';
 })
 export class ProductCardComponent implements OnInit {
   @Input() product!: Product;
-  
+  @Input() isSpecial: boolean = false;
   constructor() { }
 
   ngOnInit(): void {

@@ -81,7 +81,15 @@
         gap: 20px;
     }
 }
-
+    
+.result-title {
+    margin: 100px 0;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    text-align: center;
+    color: #FFAC4B;
+}
 .products-container {
     display: grid;
     justify-content: center;
@@ -91,4 +99,5 @@
     padding: 30px;
     max-width: 1000px;
     margin: auto;
+
 }

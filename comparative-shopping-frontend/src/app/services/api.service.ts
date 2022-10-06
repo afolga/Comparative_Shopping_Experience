@@ -10,10 +10,10 @@ import { Observable, of } from 'rxjs';
 export class ApiService {
 
   mock_allProducts: Array<Product> = [
-    {_id:"1", name: "Hoka Bondi 7", lowestPrice: "99", imageUrl: "https://picsum.photos/200", description: "This is a shoe"},
-    {_id:"1", name: "Hoka Bondi 7", lowestPrice: "99", imageUrl: "https://picsum.photos/200", description: "This is a shoe"},
-    {_id:"1", name: "Hoka Bondi 7", lowestPrice: "99", imageUrl: "https://picsum.photos/200", description: "This is a shoe"},
-    {_id:"1", name: "Hoka Bondi 7", lowestPrice: "99", imageUrl: "https://picsum.photos/200", description: "This is a shoe"},
+    {_id:"1", name: "HOKA Men's Clifton 8", lowestPrice: "139.99", imageUrl: "../../assets/hoka8.png", description: "This is a shoe"},
+    {_id:"1", name: "Brooks Men's Ghost 14", lowestPrice: "99", imageUrl: "../../assets/ghost14.png", description: "This is a shoe"},
+    {_id:"1", name: "Nike Zoom Freak 4", lowestPrice: "125", imageUrl: "../../assets/nikezoomfreak4.png", description: "This is a shoe"},
+    {_id:"1", name: "Under Armour Curry 3Z6", lowestPrice: "79.99", imageUrl: "../../assets/underarmourcurry.png", description: "This is a shoe"},
     {_id:"1", name: "Hoka Bondi 7", lowestPrice: "99", imageUrl: "https://picsum.photos/200", description: "This is a shoe"},
     {_id:"1", name: "Hoka Bondi 7", lowestPrice: "99", imageUrl: "https://picsum.photos/200", description: "This is a shoe"},
     {_id:"1", name: "Hoka Bondi 7", lowestPrice: "99", imageUrl: "https://picsum.photos/200", description: "This is a shoe"},    

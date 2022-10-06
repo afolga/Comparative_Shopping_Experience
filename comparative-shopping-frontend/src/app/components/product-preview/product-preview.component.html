@@ -20,4 +20,51 @@
             <mat-icon >star</mat-icon>
         </div>
     </div>
+
+    <div class="two-columns">
+        <div class="customization">
+            <section class="sizes-section">
+                <h2 class="title">Size</h2>
+                <div class="sizes">
+                    <span class="size-option">4</span>
+                    <span class="size-option">5</span>
+                    <span class="size-option">6</span>
+                    <span class="size-option selected">
+                        7
+                    </span>
+                    <span class="size-option">8</span>
+                    <span class="size-option">9</span>
+
+                </div>
+            </section>
+            <section class="colors-section">
+                <h2 class="title">Available Colors</h2>
+                <div class="colors">
+                    <span [ngStyle]="{'background-color': '#EAEAEA'}" class="color-option"></span>
+                    <span [ngStyle]="{'background-color': '#DD6E42'}" class="selected color-option"></span>
+                    <span [ngStyle]="{'background-color': '#4F6D7A'}" class="color-option"></span>
+                </div>
+            </section>
+            <section class="prices-section">
+                <h2 class="title">Prices</h2>
+                <div class="prices">
+                    <div class="price-option">
+                        <img src="../../../assets/ebay.png" class="brand-logo" />
+                        <p class="price lowest">$95</p>
+                    </div>
+                    <div class="price-option">
+                        <img src="../../../assets/amazon.png" class="brand-logo" />
+                        <p class="price">$100</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="description">
+            <h2 class="title">Description</h2>
+            <p class="content">
+                Lorem ipsum dolor sit amet, consectetur  adipiscing elit. Suspendisse rhoncus scelerisque dolor id viverra. Aliquam orci nibh, tincidunt in diam pulvinar, imperdiet maximus felis. Proin mauris felis, sodales in venenatis id, aliquet id erat. Namsodales 
+metus ut nunc dignissim
+            </p>
+        </div>
+    </div>
 </section>
