@@ -1,0 +1,43 @@
+<h1 mat-dialog-title>Add product to a list</h1>
+<!-- <ol>
+  <li>
+    <mat-form-field appearance="fill">
+      <mat-label>What's your name?</mat-label>
+      <input matInput [(ngModel)]="name">
+    </mat-form-field>
+  </li></ol> -->
+<!-- <ul>
+  <li>List 1</li>
+  <li>List 2</li>
+  <li>List 3</li>
+  <li>List 4</li>
+</ul> -->
+
+<form action="/action_page.php">
+  <input type="checkbox" id="list1" name="list1" value="List 1">
+  <label for="list1"> Running shoes</label><br>
+  <input type="checkbox" id="list2" name="list2" value="List 2">
+  <label for="list1"> Branded shoes</label><br>
+  <input type="checkbox" id="list3" name="list3" value="List 3">
+  <label for="list3"> Will buy later</label><br><br>
+  <!-- <input type="submit" value="Submit"> -->
+  <button mat-button>Submit</button>
+</form>
+
+<div mat-dialog-content>
+  <p>Add to a new list</p>
+  <mat-form-field>
+    <mat-label>Enter List Name</mat-label>
+    <!-- <input matInput [(ngModel)]="data.animal"> -->
+  </mat-form-field>
+  <button mat-button></button>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <!-- <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button> -->
+</div>
+
+
+<!-- Copyright 2022 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at https://angular.io/license -->

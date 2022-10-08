@@ -9,7 +9,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductCardComponent } from './components/shared/product-card/product-card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductPreviewComponent } from './components/product-preview/product-preview.component';
@@ -27,6 +27,7 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatDialogModule} from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     FormsModule,
     HttpClientModule,
     MatMenuModule,
+    MatFormFieldModule,
+    // ReactiveFormsModule,
     
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAnalytics(() => getAnalytics()),
