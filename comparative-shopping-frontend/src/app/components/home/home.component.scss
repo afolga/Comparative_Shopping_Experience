@@ -6,6 +6,12 @@
     gap: 70px;
     align-items: center;
     justify-content: center;
+    .banner-img {
+        border-radius: 300px;
+        object-fit: cover;
+        width: 746px;
+        height: 424px;
+    }
     .banner-title {
         position: relative;
         z-index: 1;
@@ -90,14 +96,108 @@
     text-align: center;
     color: #FFAC4B;
 }
-.products-container {
-    display: grid;
+.filters-products-container {
+    display: flex;
     justify-content: center;
-    gap: 48px;
-    grid-template-columns: repeat(auto-fill, minmax(270px, 270px));
-    width: 100%;
-    padding: 30px;
-    max-width: 1000px;
-    margin: auto;
+    gap: 30px;
+    .filters-container {
+        min-width: 278px;
+        display: flex;
+        flex-direction: column;
+        gap: 100px;
+        
+        .checkboxes {padding-left: 30px}
+        // max-height: 80vh;
+        // overflow-y: scroll;
+        // overflow-x: hidden;
+        // padding-right: 40px;
+        .filters-title {
+            position: relative;
+            z-index: 1;
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 35px;
+            color: #000;
+            width: fit-content;
+            .orange {
+                color: #FFAC4B;
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                width: 74px;
+                height: 74px;
+                border-radius: 50%;
+                z-index: -1;
+                background-color: #FFAC4B;
+                left: -35px;
+                top: -25px;
+            }
+        }
+        .prices-filter {
+            flex-direction: column;
+            display: flex;
+            gap: 5px;
+            .title {
+                font-weight: 700;
+                font-size: 23px;
+                line-height: 34px;
+                color: #22262A;
+            }
+            .price-range {
+                padding-left: 30px;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 27px;
+                color: #22262A;
+            }
+        }
 
+        .distance-filter {
+            flex-direction: column;
+            display: flex;
+            gap: 5px;
+            .title {
+                font-weight: 700;
+                font-size: 23px;
+                line-height: 34px;
+                color: #22262A;
+            }
+            .distance-range {
+                padding-left: 30px;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 27px;
+                color: #22262A;
+            }
+        }
+    }
+    .products-container {
+        display: grid;
+        justify-content: center;
+        gap: 48px;
+        grid-template-columns: repeat(auto-fill, minmax(270px, 270px));
+        width: 100%;
+        padding: 30px;
+        max-width: 1000px;
+        // margin: auto;
+    
+    }
 }
+
+//  ================== CUSTOM SCROLLBAR CSS ======================
+// ::-webkit-scrollbar {
+//     width: 3px;
+// }
+ 
+// ::-webkit-scrollbar-track {
+//     -webkit-box-shadow: none;
+//     margin-block: 20px;
+// }
+ 
+// ::-webkit-scrollbar-thumb {
+//   background-color: #FFAC4B;
+//   outline: 1px solid #FFAC4B;
+// }

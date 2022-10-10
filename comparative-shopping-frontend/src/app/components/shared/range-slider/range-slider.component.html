@@ -1,0 +1,10 @@
+<div class="custom-slider">
+    <ngx-slider
+      [(value)]="sliderOptions.lowValue"
+      [(highValue)]="sliderOptions.highValue"
+      [options]="options"
+      (userChange)="onUserChanges($event)"
+    >
+    </ngx-slider>
+</div>
+  

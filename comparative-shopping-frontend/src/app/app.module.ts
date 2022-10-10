@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
@@ -9,7 +8,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductCardComponent } from './components/shared/product-card/product-card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductPreviewComponent } from './components/product-preview/product-preview.component';
@@ -27,6 +26,9 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatDialogModule} from '@angular/material/dialog';
+import { RangeSliderComponent } from './components/shared/range-slider/range-slider.component';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     NavbarComponent,
     FooterComponent,
     ProductCardComponent,
-    ProductPreviewComponent
+    ProductPreviewComponent,
+    RangeSliderComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     FormsModule,
     HttpClientModule,
     MatMenuModule,
-    
+    NgxSliderModule,
+    MatCheckboxModule,
+    ReactiveFormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAnalytics(() => getAnalytics()),
     provideAuth(() => getAuth()),

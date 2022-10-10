@@ -1,13 +1,74 @@
-<section class="banner" [ngClass]="{'search-active': currentSearch.length > 0}">
-    <h1 *ngIf="!currentSearch" class="banner-title">Find your best <span class="orange">Fit</span></h1>
-    <h1 *ngIf="currentSearch" class="banner-title">Results for </h1>
-    <div class="custom-search">
+<section class="banner" [ngClass]="{'search-active': filterForm.controls['currentSearch'].value.length > 0}">
+    <img *ngIf="!filterForm.controls['currentSearch'].value" class="banner-img" src="../../../assets/banner-image.png"/>
+    <h1 *ngIf="!filterForm.controls['currentSearch'].value" class="banner-title">Find your best <span class="orange">Fit</span></h1>
+    <h1 *ngIf="filterForm.controls['currentSearch'].value" class="banner-title">Results for </h1>
+    <div [formGroup]="filterForm" class="custom-search">
         <mat-icon>search</mat-icon>
-        <input [(ngModel)]="currentSearch" (ngModelChange)="searchProducts()" placeholder="Search">
+        <input formControlName="currentSearch" (ngModelChange)="searchProducts()" placeholder="Search">
     </div>
 </section>
-<h1 *ngIf="currentSearch" class="result-title">Products < 1 mile away</h1>
+<h1 *ngIf="filterForm.controls['currentSearch'].value" class="result-title">Products < 1 mile away</h1>
 
-<section class="products-container">
-    <product-card [product]="p" [isSpecial]="i <= 2" *ngFor="let p of allProducts; let i = index"></product-card>
-</section>
+<div class="filters-products-container">
+    <section *ngIf="!isSearchResultsEmpty" [formGroup]="filterForm" class="filters-container">
+        <h1 class="filters-title">FILTERS</h1>
+
+        <div class="prices-filter">
+            <h2 class="title">PRICES</h2>
+            <p class="price-range">
+                ${{priceSliderOptions.lowValue}} - ${{priceSliderOptions.highValue}}
+            </p>
+            <range-slider [sliderOptions]="priceSliderOptions" (userChange)="onPriceSliderChanges($event)"></range-slider>
+        </div>
+
+        <div class="distance-filter">
+            <h2 class="title">DISTANCE</h2>
+            <p class="distance-range">
+                {{distanceSliderOptions.lowValue}} miles - {{distanceSliderOptions.highValue}} miles
+            </p>
+            <range-slider [sliderOptions]="distanceSliderOptions" (userChange)="onDistanceSliderChanges($event)"></range-slider>
+        </div>
+
+        <div class="source-filter">
+            <h2 class="title">SOURCE</h2>
+            <div class="checkboxes" formGroupName="sources">
+                <p><mat-checkbox formControlName="amazon">AMAZON</mat-checkbox></p>
+                <p><mat-checkbox formControlName="shein">SHEIN</mat-checkbox></p>
+                <p><mat-checkbox formControlName="brooks">BROOKS</mat-checkbox></p>
+                <p><mat-checkbox formControlName="hoka">HOKA</mat-checkbox></p>
+            </div>
+        </div>
+
+        <div class="color-filters">
+            <h2 class="title">COLOR</h2>
+            <div class="checkboxes" formGroupName="colors">
+                <p><mat-checkbox formControlName="black">BLACK</mat-checkbox></p>
+                <p><mat-checkbox formControlName="white">WHITE</mat-checkbox></p>
+                <p><mat-checkbox formControlName="yellow">YELLOW</mat-checkbox></p>
+            </div>
+        </div>
+
+        <div class="category-filters">
+            <h2 class="title">CATEGORY</h2>
+            <div class="checkboxes" formGroupName="categories">
+                <p><mat-checkbox formControlName="running">RUNNING</mat-checkbox></p>
+                <p><mat-checkbox formControlName="dress">DRESS</mat-checkbox></p>
+                <p><mat-checkbox formControlName="casual">CASUAL</mat-checkbox></p>
+                <p><mat-checkbox formControlName="lifting">LIFTING</mat-checkbox></p>
+            </div>
+        </div>
+
+        <div class="store-filters">
+            <h2 class="title">STORES</h2>
+            <div class="checkboxes" formGroupName="stores">
+                <p><mat-checkbox formControlName="halsted">halsted</mat-checkbox></p>
+                <p><mat-checkbox formControlName="maxwell">maxwell</mat-checkbox></p>
+                <p><mat-checkbox formControlName="taylor">taylor</mat-checkbox></p>
+                <p><mat-checkbox formControlName="navy_pier">navy_pier</mat-checkbox></p>
+            </div>
+        </div>
+    </section>
+    <section  class="products-container">
+        <product-card [product]="p" [isSpecial]="i <= 2" *ngFor="let p of (filteredProducts | async); let i = index"></product-card>
+    </section>
+</div>

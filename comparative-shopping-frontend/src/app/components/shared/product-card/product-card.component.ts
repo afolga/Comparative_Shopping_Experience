@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Product } from 'src/shoewizard';
+import { Product } from 'src/shoewizard.interfaces';
 
 @Component({
   selector: 'product-card',

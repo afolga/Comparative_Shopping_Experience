@@ -52,3 +52,32 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 @import "/src/app/styles/helpers.scss";
 @import "/src/app/styles/colors.scss";
+
+
+ .mat-checkbox-ripple .mat-ripple-element,
+
+  .mat-checkbox-ripple.mat-checkbox-checked.mat-accent
+  .mat-checkbox-background {
+  background-color: #ffac4b !important;
+}
+
+ .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background,
+ .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+  background-color: #ffac4b;
+  border-radius: 50%;
+}
+
+ .mat-checkbox-frame {
+  border-radius: 50% !important;
+  border-color: #ffac4b;
+}
+
+ .mat-checkbox-checked .mat-checkbox-checkmark {
+  display: none;
+}
+
+ .mat-checkbox-layout .mat-checkbox-label {
+  font-weight: 300;
+  font-size: 23px;
+  color: #3D3D3D;
+}
